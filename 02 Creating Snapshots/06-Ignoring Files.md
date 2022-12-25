@@ -13,5 +13,9 @@ Git is not going to ignore that file as the file is already being tracked for ch
     - `git rm --cached fileName`  --> To remove a file from staging area.
     - `git rm --cached -r folderName` --> To recursively remove a folder from staging area.
 
-
+![](./images/Screenshot20.png)
+![](./images/Screenshot16.png)
+![](./images/Screenshot17.png)
+![](./images/Screenshot18.png)
+![](./images/Screenshot19.png)
 
