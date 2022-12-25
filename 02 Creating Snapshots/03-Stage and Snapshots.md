@@ -38,3 +38,11 @@ The `git status` command can be run to see the status of the **Working Directory
 - Commits can be treated as checkpoints, where each commit should represent the state of the project at that point in time.
 - Each commit should represent a logically separate change set. i.e: Do not do too many things in a commit, each commit should have single type of work.
 - Ex: If you are fixing a bug, and you found a typo, instead of committing both together they should be committed separately; one commit for bugfix another for typo.
+
+## Skipping the Staging area while committing the changes
+- When 100% sure that the changes does not need to be reviewed, then only the staging area should be skipped.
+- But, only those files can be committed directly which are already being tracked (previously added in staging area). </br> i.e: new untracked file can not be committed directly by skipping the staging area.
+
+| Command                                                                   | Description                                                                                                                                         |
+|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `git commit -a -m "commitMessage"` <br/> `git commit -am "commitMessage"` | To directly commit the changes by skipping the staging area. <br/> `-a` flag represents all modified files while `-m` is to specify commit message. |
