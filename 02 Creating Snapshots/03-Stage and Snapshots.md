@@ -46,3 +46,5 @@ The `git status` command can be run to see the status of the **Working Directory
 | Command                                                                   | Description                                                                                                                                         |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | `git commit -a -m "commitMessage"` <br/> `git commit -am "commitMessage"` | To directly commit the changes by skipping the staging area. <br/> `-a` flag represents all modified files while `-m` is to specify commit message. |
+
+![](./images/Screenshot5.png)
