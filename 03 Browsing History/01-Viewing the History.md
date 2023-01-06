@@ -100,3 +100,11 @@ It shows the actual changes in the commits similar to `git diff`
 * | 64b1fe4 CSS3: border-radius property (#8803)
 ``` 
 One of the benefit of using this command is that it enables you to get a overview of how commits have merged and how the git history was created.
+
+## Viewing the History of a File
+
+`git log <filePath>`
+- To view a history of a particular file.
+- Multiple git log flags can be combined as well 
+
+![](./images/Screenshot29.png)
