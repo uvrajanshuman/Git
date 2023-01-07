@@ -1,4 +1,4 @@
-# Restoring a Deleted File.md
+# Restoring a Deleted File
 
 A deleted file can be restored from a previous commit, by using `git checkout` on that file from a previous commit.
 
@@ -12,6 +12,6 @@ From here we found out the file got deleted in commit `7e60bd9` and it's latest 
 
 -  `git checkout f1e1f8c "03 Browsing History/08-Finding Contributors using Shortlog.md"` will checkout/restore the deleted file from commit `f1e1f8c`, in working directory as well as staging area.
 
-| Command                                             | Description                                                                                    |
-|-----------------------------------------------------|------------------------------------------------------------------------------------------------|
-| `git checkout commitId/HEADPointer <filePath>`                                      | Checkout/Restore specified file from specified commit.           |
+| Command | Description |
+|---------|-------------|
+| `git checkout commitId/HEADPointer <filePath>` | Checkout/Restore specified file from specified commit. |
