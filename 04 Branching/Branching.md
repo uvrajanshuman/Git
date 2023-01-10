@@ -24,3 +24,56 @@ Thus, we always have a single working directory with multiple pointers.
 - Git uses special pointer **HEAD** to know which branch we are currently working on.
 - When we move to the new branch, **HEAD** starts pointing to the new branch pointer, else it keeps pointing the **Master**.<br>
 So, moving into branches is done by just moving the **HEAD** pointer.
+
+
+## Working with Branches
+
+### Create new branch
+
+`git branch <name-of-branch>` : To create a new branch.
+
+```shell
+~/Git&GitHub (master)
+$ git branch demo-branch    #Create a new branch 'demo-branch'
+```
+
+### View Branches
+
+`git branch` : To view all the available branches.
+
+```shell
+$ git branch    #View all branches
+  demo-branch
+* master
+```
+
+The `*` in front of the **_master_** means that at the moment we are in that branch. 
+It is also possible to view the current branch with `git status`.
+
+```shell
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+
+### Switch branches
+
+`git switch <name-of-branch>` : To switch to specified branch. <br>
+It can also be done using `git checkout <name-of-branch>` (old command)
+
+```shell
+~/Git&GitHub (master)
+$ git switch demo-branch    #Switch to 'demo-branch'
+Switched to branch 'demo-branch'
+```
+
+### Rename a branch `-m`
+
+`git branch -m <old-name> <new-name>` : To rename a branch.
+
+```shell
+~/Git&GitHub (demo-branch)
+$ git branch -m demo-branch bugfix    #Rename 'demo-branch' to 'bugfix'
+```
+
+> we may have used dummy names for branches. But the branche name should be meaningful and should represent the work that is being performed on it.
