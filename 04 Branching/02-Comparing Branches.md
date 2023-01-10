@@ -38,3 +38,10 @@ To compare the actual changes between branches we use the `diff` command, like  
 - If we are in the ***master*** branch we do not need to specify it in the command, we can run `git diff bugfix`, this will have the same output. It will compare current branch with specified branch.
 
 `--name-only` or `--name-status` flag can also be used with diff to view the name of modified file or to view the name of modified files along with modification type.
+
+## Summary:
+
+| Command                                   | Description                                                                         |
+|-------------------------------------------|-------------------------------------------------------------------------------------|
+| `git log <first-branch>..<second-branch>` | To list all the commits that are in `<second-branch>`, and not in `<first-branch>`  |
+| `git diff <first-branch>..<second-branch>`| To view the actual changes between `<first-branch>` and `<second-branch>`.          |
