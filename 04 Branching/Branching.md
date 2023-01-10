@@ -77,3 +77,96 @@ $ git branch -m demo-branch bugfix    #Rename 'demo-branch' to 'bugfix'
 ```
 
 > we may have used dummy names for branches. But the branche name should be meaningful and should represent the work that is being performed on it.
+
+### Commit to the new branch
+
+```shell
+~/Git&GitHub (bugfix)
+$ git status -s    #Short Git status
+ M "04 Branching/Branching.md"
+
+~/Git&GitHub (bugfix)
+$ git add '04 Branching/Branching.md'    #Stage the changes
+
+~/Git&GitHub (bugfix)
+$ git commit -m 'Working with branches'    #Commit to the new branch
+[bugfix e3e348f] Working with branches
+ 1 file changed, 53 insertions(+)
+
+```
+
+When we commit to a branch this branch moves forward and the **_master_** branch stays where it is, this can be verified using `git log --oneline`. The **_HEAD_** pointer will be pointing to the new branch which is now ahead of **_master_**.
+
+```shell
+~/Git&GitHub (bugfix)
+$ git log --oneline
+e3e348f (HEAD -> bugfix) Working with branches
+537ee9d (master) Branching Introduction
+907f0e1 (tag: M-03) Module 03 - Browsing History
+d028a00 Finding the Author of Line using Blame Complete
+32d1ae4 Refactor 'Restoring a Deleted File'
+2aeabfe Restoring a Deleted File Complete
+b30df15 Restore 'Finding Contributors using Shortlog.md'
+[...]
+```
+**Switching to master branch**
+```shell
+~/Git&GitHub (bugfix)
+$ git switch master    #Switch to master
+Switched to branch 'master'
+```
+If we switch back to **_main_** our **Working Directory** will be restored to that the commit at that point. The changes made in bugfix branch will not be visible in the master branch.
+
+**Viewing the git log in master branch**
+```shell
+~/Git&GitHub (master)
+$ git log --oneline
+537ee9d (HEAD -> master) Branching Introduction
+907f0e1 (tag: M-03) Module 03 - Browsing History
+d028a00 Finding the Author of Line using Blame Complete
+32d1ae4 Refactor 'Restoring a Deleted File'
+2aeabfe Restoring a Deleted File Complete
+[...]
+```
+The mater is one commit behing the bugfix branch. so, when in master branch `git log --oneline` will only show commit log till master. But `--all` flag can be used to view the entire commit log.
+
+```shell
+~/Git&GitHub (master)
+$ git log --oneline --all    #To view entire commit log
+e3e348f (bugfix) Working with branches
+537ee9d (HEAD -> master) Branching Introduction
+907f0e1 (tag: M-03) Module 03 - Browsing History
+d028a00 Finding the Author of Line using Blame Complete
+32d1ae4 Refactor 'Restoring a Deleted File'
+2aeabfe Restoring a Deleted File Complete
+[...]
+```
+
+## Delete a brach `-d` or `-D`
+
+`git branch -d <name-of-branch>` : To delete specified branch.
+
+At some point in future when we are done making changes in bugfix we can merge it in the master branch and delete the bugfix branch.
+The changes made in a branch remains confined to it unless merged.
+
+To delete, first we need to change to a different branch usually ***master***, then we use the `-d` option, but if this branch has unmerged changes with ***master***, Git will throw an error warning us.
+
+```shell
+~/Git&GitHub (master)
+$ git branch -d bugfix
+error: The branch 'bugfix' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D bugfix'.
+```
+
+Although the forced deletion can be performed using `git branch -D bugfix`.
+
+## Summary:
+
+| Command                                                                           | Description                                 |
+|-----------------------------------------------------------------------------------|---------------------------------------------|
+| `git branch <name-of-branch>`                                                     | To Create a new branch.                     |
+| `git branch`                                                                      | To view all the available branches.         |
+| `git switch <name-of-branch>` <br>`git checkout <name-of-branch>` (old command)   | To switch to the specified branch.          |
+| `git branch -m <old-name> <new-name>`                                             | To rename a branch.                         |
+| `git branch -d <name-of-branch>`                                                  | To delete specified branch..                |
+| `git branch -D bugfix`                                                            | To force delete specified branch..          |
