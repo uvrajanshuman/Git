@@ -70,3 +70,16 @@ $ git log --oneline --graph
 * d028a00 Finding the Author of Line using Blame Complete
 [...]
 ```
+## Merge without fast-forward `--no-ff`
+
+`git merge --no-ff <branch-name>` : To enforce a non fast-forward merge with the command 
+
+With this we tell Git that, even though it is possible to have a fast-forward merge, don't do it,  instead create a new commit (merge-commit) to merge the branches.
+
+**Creating a new branch to demostrate no fast forward merge :**
+```shell
+~/Git&GitHub (master)
+$ git switch -C no-fast-forward-merge    #Create a branch at switch to it as well
+Switched to a new branch 'no-fast-forward-merge'
+```
+- Then committing few changes to this new **no-fast-forward-merge** branch
