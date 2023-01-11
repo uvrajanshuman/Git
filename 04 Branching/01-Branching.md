@@ -117,6 +117,8 @@ Switched to branch 'master'
 ```
 If we switch back to **_main_** our **Working Directory** will be restored to that the commit at that point. The changes made in bugfix branch will not be visible in the master branch.
 
+> `git switch -C <branch-name>` : To create a branch and switch to it as well.
+
 **Viewing the git log in master branch**
 ```shell
 ~/Git&GitHub (master)
@@ -167,6 +169,7 @@ Although the forced deletion can be performed using `git branch -D bugfix`.
 | `git branch <name-of-branch>`                                                     | To Create a new branch.                     |
 | `git branch`                                                                      | To view all the available branches.         |
 | `git switch <name-of-branch>` <br>`git checkout <name-of-branch>` (old command)   | To switch to the specified branch.          |
+| `git switch -C <name-of-branch>`                                                  | To create a new branch and switch to it.    |
 | `git branch -m <old-name> <new-name>`                                             | To rename a branch.                         |
 | `git branch -d <name-of-branch>`                                                  | To delete specified branch..                |
 | `git branch -D bugfix`                                                            | To force delete specified branch..          |
