@@ -10,4 +10,6 @@ Conflicts happen when:
 When conflict happens Git cannot automatically determine what is correct, and thus can not merge the branches automatically
 Git will mark the file as being conflicted and halt the merging process. It is then the developers responsibility to resolve the conflict.
 
-Conflicting change introduced in 'master' branch <!-- Modifying the same line in 'master'-->
+<!--Resolving conflicts manually-->
+<!--Conflicting change introduced in 'master' branch -- Modifying the same line in 'master'-->
+<!--Conflicting change introduced in 'conflicting-branch' branch -- Modifying the same line in 'conflicting-branch'-->
