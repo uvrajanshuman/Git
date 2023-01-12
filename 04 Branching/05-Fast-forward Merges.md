@@ -165,3 +165,10 @@ Thus in case of Non Fast-Forward merges there is a single commit (merge commit) 
 - Since, Fast-Forward merge leads to linear history; we need to revert all commits of feture branch to revert the last commit.
 - Some people beleive Fast-Forward merges lead to merge commits which pollutes the history. They make it harder to read and understand whats going on, especially when we have more and more branches. These poeple prefer linear history
 
+## Summary:
+
+| Command                                                             | Description                                                              |
+|---------------------------------------------------------------------|--------------------------------------------------------------------------|
+| `git merge <branch-name>`                                           | To fast-forward merge a branch. (in case branches have not diverged)     | 
+| `git merge --no-ff <branch-name>`                                   | To enforce a non fast-forward merge (in case branches have not diverged) | 
+| `git config merge.ff false` or `git config --global merge.ff false` | Disable fast-forward merges for single repo or globally                  |
