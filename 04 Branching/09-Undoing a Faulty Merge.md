@@ -171,3 +171,9 @@ The reverted commit will match the commit `ffac6c4`.
 - This will revert all the changes made by the second branch (feature) on master. The resulting tree will behave as the branch feature was never merged to master.
 
 ![](./images/Screenshot20.png)
+
+
+## Summary:
+- The `git revert` is a **safe** way to undo changes as it does not alters the history, while `git reset` can be considered as the dangerous method. 
+- There is a real risk of losing work with git reset. Git reset will never delete a commit, however, commits can become 'orphaned' which means there is no direct path from a ref to access them. <br> These orphaned commits can usually be found and restored using git reflog. Git will permanently delete any orphaned commits after it runs the internal garbage collector. By default, Git is configured to run the garbage collector every 30 days.
+- Resetting completely removes a changeset, whereas Reverting maintains the original changeset and uses a new commit to apply the undo
