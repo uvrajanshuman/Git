@@ -41,3 +41,81 @@ So we are re-writing history. **F1\*** and **F2\*** are not the same commit as *
 >To demonstrate `git rebase` we will create a new branch **_`rebase-branch`_**, add two commits to it (one of these commits will be a dummy commit meant to be skipped while rebasing) then switch back to master to create a conflicting commit.<br> The branches will diverge and can be verified using `git log`.
 
 [Changes for demonstrating `git rebase`](./images/Screenshot32.png)
+
+## Rebase command
+
+`git rebase <branch-name>` : To rebase current branch to the specified branch.
+
+First in the new branch in this case **rebase-branch** run `git rebase master`.
+
+Then we switch to **_`master`_** and run `git merge <name-of-branch>`.
+
+
+## Resolving conficts
+
+### Rebase `--continue`
+
+Rebasing may lead into conflicts.
+
+Resolving conflicts is similar as in other situations. When we run `git rebase master`, we will be warned of conflicts if there exists any. After resolving this conflicts we run:
+
+```shell
+git rebase --continue
+```
+
+This will make Git apply the next commit of **_`rebase-branch`_** on top of **_`master`_**. It is possible that, the next commit also has conflicts , so we must resolve it once more.
+
+### Rebase `--skip`
+
+Alternatively, while applying commits through rebase we can use the `--skip` option to skip the current commit and move to the next commit. For example if the conflict appear in a particular commit, but we do not care about that commit we can skip it and move onto the next one.
+
+```shell
+git rebase --skip
+```
+
+### Rebase `--abort`
+
+We can abort the rebase operation with the option `--abort`. For example if we have too many conflict and do not want to go through a complete rebase. Aborting the rebase will take us back to the previous state before starting rebasing.
+
+```zsh
+git rebase --abort
+```
+
+## Rebase command
+
+`git rebase <branch-name>` : To rebase current branch to the specified branch.
+
+First in the new branch in this case **rebase-branch** run `git rebase master`.
+
+Then we switch to **_`master`_** and run `git merge <name-of-branch>`.
+
+
+## Resolving conficts
+
+### Rebase `--continue`
+
+Rebasing may lead into conflicts.
+
+Resolving conflicts is similar as in other situations. When we run `git rebase master`, we will be warned of conflicts if there exists any. After resolving this conflicts we run:
+
+```shell
+git rebase --continue
+```
+
+This will make Git apply the next commit of **_`rebase-branch`_** on top of **_`master`_**. It is possible that, the next commit also has conflicts , so we must resolve it once more.
+
+### Rebase `--skip`
+
+Alternatively, while applying commits through rebase we can use the `--skip` option to skip the current commit and move to the next commit. For example if the conflict appear in a particular commit, but we do not care about that commit we can skip it and move onto the next one.
+
+```shell
+git rebase --skip
+```
+
+### Rebase `--abort`
+
+We can abort the rebase operation with the option `--abort`. For example if we have too many conflict and do not want to go through a complete rebase. Aborting the rebase will take us back to the previous state before starting rebasing.
+
+```zsh
+git rebase --abort
+```
