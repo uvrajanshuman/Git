@@ -38,3 +38,6 @@ Then Git moves the pointer of **feature** to point the latest commit of these ne
 So we are re-writing history. **F1\*** and **F2\*** are not the same commit as **F1** and **F2**. And if we have shared **F1** and **F2** publically and other devs have created new commits on top of **F2**, now after rebasing their history will get screwed.
 
 ![](./images/Screenshot31.png)
+>To demonstrate `git rebase` we will create a new branch **_`rebase-branch`_**, add two commits to it (one of these commits will be a dummy commit meant to be skipped while rebasing) then switch back to master to create a conflicting commit.<br> The branches will diverge and can be verified using `git log`.
+
+[Changes for demonstrating `git rebase`](./images/Screenshot32.png)
