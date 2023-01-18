@@ -15,6 +15,10 @@ And if conflict arises while merging we need to reslove them as well.
 So here, `git pull` will download the commit **C**.<br>
 Now since, our branches have diverged. In this case git will perform a three way merge **M** to merge the remote changes into our master branch.
 
+```shell
+>git pull
+```
+
 ![](./images/Screenshot6.png)
 
 >But if someone doesn't likes the merge-commits as it pollutes the history, they can use the rebase option as well for linear history.
@@ -23,12 +27,16 @@ Now since, our branches have diverged. In this case git will perform a three way
 
 With the command `git pull --rebase` Git will rebase the latest changes of **Local Repository** branch on top of the latest changes of **Remote Repository** branch.
 
+```shell
+>git pull --rebase
+```
+
 ![](./images/Screenshot7.png)
 
 So, instead of `git pull`, if `git pull --rebase` is used Git will rebase our master branch and change the base of master from commit **B** to commit **C**. <br>
 This will lead to a simple linear history.
 
-# Summary
+## Summary
 
 ![](./images/git-pull.gif)
 
